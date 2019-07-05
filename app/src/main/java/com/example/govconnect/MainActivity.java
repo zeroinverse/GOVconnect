@@ -58,6 +58,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void UserMenuSelector(MenuItem item){
+        switch (item.getItemId()){
+            case R.id.logout:
+                mAuth.signOut();
+                SendUserToLoginActivity();
+                break;
+
+        }
 
     }
 }
