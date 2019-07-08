@@ -29,7 +29,7 @@
         android:inputType="textMultiLine" />
 
     <EditText
-        android:id="@+id/setup_email"
+        android:id="@+id/areaPin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/setup_name"
@@ -37,14 +37,14 @@
         android:layout_margin="5dp"
         android:background="@drawable/inputs"
         android:ems="10"
-        android:hint="eMail ID"
+        android:hint="PIN Code"
         android:inputType="textEmailAddress" />
 
     <Button
         android:id="@+id/setup_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/setup_email"
+        android:layout_below="@id/areaPin"
         android:layout_centerHorizontal="true"
         android:layout_margin="5dp"
         android:background="@drawable/button"
