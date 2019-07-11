@@ -4,17 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/login"
+    android:background="@drawable/blurry"
     tools:context="com.example.govconnect.RegisterActivity">
 
     <ImageView
         android:id="@+id/login_icon"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="230dp"
+        android:layout_height="200dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
-        app:srcCompat="@drawable/sublogo" />
+        app:srcCompat="@drawable/india2" />
 
     <EditText
         android:id="@+id/login_email"

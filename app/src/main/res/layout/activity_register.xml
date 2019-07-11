@@ -10,11 +10,11 @@
     <ImageView
         android:id="@+id/register_icon"
         android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_height="190dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
-        app:srcCompat="@drawable/elephant" />
+        app:srcCompat="@drawable/gov" />
 
     <EditText
         android:id="@+id/register_email"

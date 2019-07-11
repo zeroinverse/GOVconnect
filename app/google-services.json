@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "1022882471586",
-    "firebase_url": "https://gov-connect.firebaseio.com",
-    "project_id": "gov-connect",
-    "storage_bucket": "gov-connect.appspot.com"
+    "project_number": "769435482724",
+    "firebase_url": "https://govconnect-289ff.firebaseio.com",
+    "project_id": "govconnect-289ff",
+    "storage_bucket": "govconnect-289ff.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1022882471586:android:f3e5dd0e2537e6c5",
+        "mobilesdk_app_id": "1:769435482724:android:f3e5dd0e2537e6c5",
         "android_client_info": {
           "package_name": "com.example.govconnect1"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1022882471586-5cg6e8u0giad9iui4g1nu0fm1voskkh2.apps.googleusercontent.com",
+          "client_id": "769435482724-po1edtdmr9upa3r53pgdt43akr8b1elp.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.govconnect1",
@@ -23,28 +23,20 @@
           }
         },
         {
-          "client_id": "1022882471586-rk2a651o3pbk4bo0bflsfedmv1qbl0k3.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.govconnect1",
-            "certificate_hash": "04154724ea6b64b105997d6b6dc036c165dd0c22"
-          }
-        },
-        {
-          "client_id": "1022882471586-kk6ut4nhvgl83l1aitt3qcefc4emh15n.apps.googleusercontent.com",
+          "client_id": "769435482724-1saec3955nhf8mo6780mabicf6rmqs31.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBzKNu0qnAxETiNOmR7HJHKCcC9SM21udk"
+          "current_key": "AIzaSyCHCHvTa7aLPIZHnSptTLKHu1NVIPpE5Kw"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1022882471586-kk6ut4nhvgl83l1aitt3qcefc4emh15n.apps.googleusercontent.com",
+              "client_id": "769435482724-1saec3955nhf8mo6780mabicf6rmqs31.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
