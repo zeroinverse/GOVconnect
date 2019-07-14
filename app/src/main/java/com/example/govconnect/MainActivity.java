@@ -9,6 +9,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -24,28 +26,57 @@ public class MainActivity extends AppCompatActivity {
     private NavigationView navigationView;
     private DrawerLayout drawerLayout;
     private RecyclerView postlist;
+    String currentUserID;
     private FirebaseAuth mAuth;
-    private DatabaseReference UserRef;
+    private TextView NavProfileUserName;
+    private DatabaseReference UsersRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mAuth=FirebaseAuth.getInstance();
-        UserRef= FirebaseDatabase.getInstance().getReference().child("Users");
+        currentUserID = mAuth.getCurrentUser().getUid();
+        UsersRef = FirebaseDatabase.getInstance().getReference().child("Users");
 
         drawerLayout=( DrawerLayout) findViewById( R.id.draw_layout );
         navigationView=(NavigationView)findViewById( R.id.nav_view );
-        View navView=navigationView.inflateHeaderView( R.layout.nav_header );
+        View navView = navigationView.inflateHeaderView(R.layout.nav_header);
+        NavProfileUserName = (TextView) navView.findViewById(R.id.username);
 
-        navigationView.setNavigationItemSelectedListener( new NavigationView.OnNavigationItemSelectedListener() {
+        UsersRef.child(currentUserID).addValueEventListener(new ValueEventListener() {
             @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                MenuItem item=null;
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    if (dataSnapshot.hasChild("fullname")) {
+                        String fullname = dataSnapshot.child("fullname").getValue().toString();
+                        NavProfileUserName.setText(fullname);
+                    }
+//                    if(dataSnapshot.hasChild("profileimage"))
+//                    {
+//                        String image = dataSnapshot.child("profileimage").getValue().toString();
+//                        Picasso.with(MainActivity.this).load(image).placeholder(R.drawable.profile).into(NavProfileImage);
+//                    }
+                    else {
+                        Toast.makeText(MainActivity.this, "Profile name do not exists.",
+                                Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 UserMenuSelector(item);
                 return false;
             }
-        } );
+        });
 
     }
 
@@ -55,16 +86,14 @@ public class MainActivity extends AppCompatActivity {
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser == null) {
             SendUserToLoginActivity();
-        }
-        else
-        {
+        } else {
             CheckUserExistence();
         }
     }
 
     private void CheckUserExistence() {
-        final String current_user_id =mAuth.getCurrentUser().getUid();
-        UserRef.addValueEventListener(new ValueEventListener() {
+        final String current_user_id = mAuth.getCurrentUser().getUid();
+        UsersRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(!dataSnapshot.hasChild(current_user_id)){
@@ -94,14 +123,28 @@ public class MainActivity extends AppCompatActivity {
         finish();
     }
 
-    private void UserMenuSelector(MenuItem item){
-        switch (item.getItemId()){
+    private void UserMenuSelector(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.home:
+                Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show();
+                break;
+
+            case R.id.check_status:
+                Toast.makeText(this, "Check Status", Toast.LENGTH_SHORT).show();
+                break;
+
+            case R.id.profile:
+                Toast.makeText(this, "Profile", Toast.LENGTH_SHORT).show();
+                break;
+
+            case R.id.settings:
+                Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show();
+                break;
+
             case R.id.logout:
                 mAuth.signOut();
                 SendUserToLoginActivity();
                 break;
-
         }
-
     }
 }
