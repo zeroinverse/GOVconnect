@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     String currentUserID;
     private FirebaseAuth mAuth;
     private TextView NavProfileUserName;
+    private ImageButton AddNewPostButton;
     private DatabaseReference UsersRef;
 
     @Override
@@ -38,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
         mAuth=FirebaseAuth.getInstance();
         currentUserID = mAuth.getCurrentUser().getUid();
         UsersRef = FirebaseDatabase.getInstance().getReference().child("Users");
+
+        AddNewPostButton=(ImageButton)findViewById(R.id.add_new_post_button);
 
         drawerLayout=( DrawerLayout) findViewById( R.id.draw_layout );
         navigationView=(NavigationView)findViewById( R.id.nav_view );
@@ -78,6 +82,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        AddNewPostButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+            SendUserToPostActivity();
+            }
+        });
+
+    }
+
+    private void SendUserToPostActivity()
+    {
+        Intent addNewPostIntent = new Intent(MainActivity.this, PostActivity.class);
+        startActivity(addNewPostIntent);
     }
 
     @Override
