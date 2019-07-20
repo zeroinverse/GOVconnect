@@ -29,7 +29,10 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/user_post"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:layout_alignStart="@+id/main_container"
+                android:layout_alignTop="@+id/main_container"
+               />
         </FrameLayout>
 
         <ImageButton

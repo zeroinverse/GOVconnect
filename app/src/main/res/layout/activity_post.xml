@@ -13,4 +13,61 @@
         android:background="@color/colorPrimaryDark">
 
     </androidx.appcompat.widget.Toolbar>
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="false"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="3dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginRight="-1dp"
+        android:layout_marginBottom="306dp"
+        android:adjustViewBounds="false"
+        android:scaleType="centerInside"
+        app:srcCompat="@drawable/select_image" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="false"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="211dp"
+        android:background="@drawable/inputs"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="Caption......"
+        android:inputType="textMultiLine"
+        android:padding="15dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="143dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="145dp"
+        android:layout_marginRight="145dp"
+        android:layout_marginBottom="127dp"
+        android:background="@drawable/button"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:text="Update Post" />
+
 </RelativeLayout>

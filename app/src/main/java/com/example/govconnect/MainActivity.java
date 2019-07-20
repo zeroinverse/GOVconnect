@@ -10,7 +10,6 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -30,12 +29,13 @@ public class MainActivity extends AppCompatActivity {
     private NavigationView navigationView;
     private DrawerLayout drawerLayout;
     private RecyclerView postlist;
-    private Toolbar mToolbar;
     String currentUserID;
     private FirebaseAuth mAuth;
     private TextView NavProfileUserName;
     private ImageButton AddNewPostButton;
     private DatabaseReference UsersRef;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,10 +45,10 @@ public class MainActivity extends AppCompatActivity {
         currentUserID = mAuth.getCurrentUser().getUid();
         UsersRef = FirebaseDatabase.getInstance().getReference().child("Users");
 
-        mToolbar=(Toolbar) findViewById(R.id.main_page_toolbar);
-        setSupportActionBar(mToolbar);
+
 
         AddNewPostButton=(ImageButton)findViewById(R.id.add_new_post_button);
+
 
         drawerLayout=( DrawerLayout) findViewById( R.id.draw_layout );
         navigationView=(NavigationView)findViewById( R.id.nav_view );

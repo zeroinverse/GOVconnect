@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <item name="select_post_image" type="id"/>
+    <item name="update_post_button" type="id"/>
+    <item name="post_description" type="id"/>
     <item type="id" name="update_post_page_toolbar"/>
+    <item name="list_post" type="id"/>
+
 </resources>
